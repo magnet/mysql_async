@@ -1435,7 +1435,7 @@ impl Conn {
             };
             if opts_changed {
                 if let Some(pool) = self.inner.pool.take() {
-                    pool.cancel_connection();
+                    pool.detach_connection();
                 }
             }
         }
